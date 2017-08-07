@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A1ECF871F37B2FA006E142C /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1ECF861F37B2FA006E142C /* CurrentWeatherModel.swift */; };
+		6A1ECF891F380419006E142C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1ECF881F380419006E142C /* Assets.xcassets */; };
+		6A1ECF8C1F38209C006E142C /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1ECF8B1F38209C006E142C /* Forecast.swift */; };
 		6A3AE0E61F36D6450053BE5D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AE0E51F36D6450053BE5D /* WeatherService.swift */; };
 		6A3AE0E71F36D6450053BE5D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AE0E51F36D6450053BE5D /* WeatherService.swift */; };
 		6A3AE0E91F36D8090053BE5D /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AE0E81F36D8090053BE5D /* CityService.swift */; };
@@ -15,7 +17,6 @@
 		6A67CF291F362D2F0001D1B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */; };
 		6A67CF2B1F362D2F0001D1B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CF2A1F362D2F0001D1B2 /* ViewController.swift */; };
 		6A67CF2E1F362D2F0001D1B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A67CF2C1F362D2F0001D1B2 /* Main.storyboard */; };
-		6A67CF301F362D2F0001D1B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A67CF2F1F362D2F0001D1B2 /* Assets.xcassets */; };
 		6A67CF331F362D2F0001D1B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A67CF311F362D2F0001D1B2 /* LaunchScreen.storyboard */; };
 		6A67CF3E1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CF3D1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift */; };
 		6AF0E1661F36E17000226351 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF0E1651F36E17000226351 /* City.swift */; };
@@ -34,13 +35,14 @@
 
 /* Begin PBXFileReference section */
 		6A1ECF861F37B2FA006E142C /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
+		6A1ECF881F380419006E142C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A1ECF8B1F38209C006E142C /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		6A3AE0E51F36D6450053BE5D /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		6A3AE0E81F36D8090053BE5D /* CityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityService.swift; sourceTree = "<group>"; };
 		6A67CF251F362D2F0001D1B2 /* BoseWeatherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoseWeatherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A67CF2A1F362D2F0001D1B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A67CF2D1F362D2F0001D1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6A67CF2F1F362D2F0001D1B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A67CF321F362D2F0001D1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A67CF341F362D2F0001D1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A67CF391F362D2F0001D1B2 /* BoseWeatherApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoseWeatherApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,14 @@
 			name = "Current Weather";
 			sourceTree = "<group>";
 		};
+		6A1ECF8A1F38207E006E142C /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				6A1ECF8B1F38209C006E142C /* Forecast.swift */,
+			);
+			name = Forecast;
+			sourceTree = "<group>";
+		};
 		6A3AE0EB1F36D9CD0053BE5D /* Search City */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,13 +119,14 @@
 		6A67CF271F362D2F0001D1B2 /* BoseWeatherApplication */ = {
 			isa = PBXGroup;
 			children = (
+				6A1ECF8A1F38207E006E142C /* Forecast */,
 				6A1ECF851F37B2DB006E142C /* Current Weather */,
 				6A3AE0EB1F36D9CD0053BE5D /* Search City */,
 				6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */,
 				6A67CF2C1F362D2F0001D1B2 /* Main.storyboard */,
-				6A67CF2F1F362D2F0001D1B2 /* Assets.xcassets */,
 				6A67CF311F362D2F0001D1B2 /* LaunchScreen.storyboard */,
 				6A67CF341F362D2F0001D1B2 /* Info.plist */,
+				6A1ECF881F380419006E142C /* Assets.xcassets */,
 			);
 			path = BoseWeatherApplication;
 			sourceTree = "<group>";
@@ -213,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A67CF331F362D2F0001D1B2 /* LaunchScreen.storyboard in Resources */,
-				6A67CF301F362D2F0001D1B2 /* Assets.xcassets in Resources */,
+				6A1ECF891F380419006E142C /* Assets.xcassets in Resources */,
 				6A67CF2E1F362D2F0001D1B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A1ECF8C1F38209C006E142C /* Forecast.swift in Sources */,
 				6A67CF2B1F362D2F0001D1B2 /* ViewController.swift in Sources */,
 				6AF0E1661F36E17000226351 /* City.swift in Sources */,
 				6A1ECF871F37B2FA006E142C /* CurrentWeatherModel.swift in Sources */,

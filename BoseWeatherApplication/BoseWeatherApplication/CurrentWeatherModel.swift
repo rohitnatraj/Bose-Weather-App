@@ -17,8 +17,9 @@ class CurrentWeather:NSObject {
     var cityName:String?
     var weatherDescription:String?
     var currentTemperature:Double?
-    var minimumTemperature:Double?
-    var maximumTemperature:Double?
+    var humidity:Double?
+    var code:Int?
+    var isDay:Bool?
 }
 
 class CurrentWeatherModel:NSObject {
@@ -30,31 +31,28 @@ class CurrentWeatherModel:NSObject {
     func getCurrentWeatherFor(_ city:CityCoordinates) {
         let currentWeather = CurrentWeather()
         self.weatherService.fetchCurrentWeatherForLocationWith(latitude: city.lattitude!, longitude: city.longitude!, onSuccess: { (results) in
+            currentWeather.cityName = city.cityName
             
-            if let weather = results["weather"] as? [[String:Any]], weather.count > 0 {
-                if let weatherDescription = weather[0]["description"] as? String {
-                    currentWeather.weatherDescription = weatherDescription
-                }
-            }
-            
-            if let main = results["main"] as? [String:Any], main.count > 0 {
-                if let currentTemperature = main["temp"] as? Double {
-                    currentWeather.currentTemperature = currentTemperature
+            if let current = results["current"] as? [String:Any], current.count > 0 {
+                if let currentTemperatureInFarenheit = current["temp_f"] as? Double {
+                    currentWeather.currentTemperature = currentTemperatureInFarenheit
                 }
                 
-                if let minimumTemperature = main["temp_min"] as? Double {
-                    currentWeather.minimumTemperature = minimumTemperature
+                if let humidity = current["humidity"] as? Double {
+                    currentWeather.humidity = humidity
                 }
                 
-                if let maximumTemperature = main["temp_max"] as? Double {
-                    currentWeather.maximumTemperature = maximumTemperature
+                if let isDay = current["is_day"] as? Int {
+                    currentWeather.isDay = Bool(isDay as NSNumber)
+                    
                 }
-            }
-            
-            if let sys = results["sys"] as? [String:Any] {
-                if let country = sys["country"] as? String {
-                    if let cityName = results["name"] as? String {
-                        currentWeather.cityName = cityName + ", \(country)"
+                
+                if let condition = current["condition"] as? [String:Any], condition.count > 0 {
+                    if let description = condition["text"] as? String {
+                        currentWeather.weatherDescription = description
+                    }
+                    if let code = condition["code"] as? Int {
+                        currentWeather.code = code
                     }
                 }
             }

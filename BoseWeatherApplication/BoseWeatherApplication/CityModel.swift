@@ -53,6 +53,10 @@ class CityModel:NSObject {
                                     if let cityName = addressComponent["long_name"] as? String {
                                         cityCoordinates.cityName = cityName
                                     }
+                                } else if (types.contains("administrative_area_level_1")) {
+                                    if let cityName = addressComponent["long_name"] as? String {
+                                        cityCoordinates.cityName = cityName
+                                    }
                                 }
                                 
                                 if (types.contains("country")) {

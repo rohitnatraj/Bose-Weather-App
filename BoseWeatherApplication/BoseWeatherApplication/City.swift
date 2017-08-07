@@ -20,7 +20,9 @@ class City: UITableViewController, UISearchBarDelegate, CityDelegate {
     let model = CityModel()
     var cityCoordinates = [CityCoordinates]()
     var cityCoordinate = CityCoordinates()
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    lazy var activityIndicator : UIActivityIndicatorView = {
+       return UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    }()
     
     //Outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -32,7 +34,9 @@ class City: UITableViewController, UISearchBarDelegate, CityDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.citySelectionDelegate?.userSelected(self.cityCoordinate)
+        if (self.cityCoordinate.cityName != nil) {
+            self.citySelectionDelegate?.userSelected(self.cityCoordinate)
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,12 +62,10 @@ class City: UITableViewController, UISearchBarDelegate, CityDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
         self.cityCoordinate = self.cityCoordinates[indexPath.row]
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
     
     //MARK: - Search Methods

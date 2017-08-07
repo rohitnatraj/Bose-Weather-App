@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Current Weather-->
+        <!--Weather-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BoseWeatherApplication" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r2H-fe-ZPl">
-                                <rect key="frame" x="16" y="94" width="343" height="262"/>
+                                <rect key="frame" x="16" y="94" width="343" height="339"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qCq-wk-yDI">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -39,32 +39,34 @@
                                             <constraint firstAttribute="height" constant="40" id="xOo-hI-MJf"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overcast Clouds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruS-GH-FIN">
-                                        <rect key="frame" x="108" y="70" width="127" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-b8-zbc">
+                                        <rect key="frame" x="40" y="70" width="263" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overcast Clouds" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruS-GH-FIN">
+                                                <rect key="frame" x="0.0" y="54" width="131.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ffp-jK-GaS">
+                                                <rect key="frame" x="131.5" y="0.0" width="131.5" height="128"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-xz-E55">
-                                        <rect key="frame" x="41.5" y="120.5" width="260" height="81.5"/>
+                                        <rect key="frame" x="73.5" y="228" width="196" height="51"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RRq-vc-iFK">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="81.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="51"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MN-nP-LLg">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MN-nP-LLg">
                                                         <rect key="frame" x="0.0" y="0.0" width="98" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-kl-m53">
-                                                        <rect key="frame" x="0.0" y="30.5" width="130" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaxTemperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcd-h9-aSn">
-                                                        <rect key="frame" x="0.0" y="61" width="129" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-kl-m53">
+                                                        <rect key="frame" x="0.0" y="30.5" width="68.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -72,22 +74,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-j9-HaF">
-                                                <rect key="frame" x="130" y="0.0" width="130" height="81.5"/>
+                                                <rect key="frame" x="98" y="0.0" width="98" height="51"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-mu-XEQ">
-                                                        <rect key="frame" x="55.5" y="0.0" width="19.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-mu-XEQ">
+                                                        <rect key="frame" x="39.5" y="0.0" width="19.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-VN-HkY">
-                                                        <rect key="frame" x="55.5" y="30.5" width="19.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8a-L2-R7r">
-                                                        <rect key="frame" x="54.5" y="61" width="21.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-VN-HkY">
+                                                        <rect key="frame" x="39.5" y="30.5" width="19.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -103,7 +99,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpZ-Cv-DSB">
-                                        <rect key="frame" x="102" y="232" width="139" height="30"/>
+                                        <rect key="frame" x="102" y="309" width="139" height="30"/>
                                         <state key="normal" title="Next 5 Day Forecast"/>
                                         <connections>
                                             <segue destination="L67-hq-hjg" kind="show" id="nex-2B-LjN"/>
@@ -120,10 +116,12 @@
                         <constraints>
                             <constraint firstItem="r2H-fe-ZPl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Dfw-Ck-tSY"/>
                             <constraint firstItem="r2H-fe-ZPl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Nrc-QI-WyD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e9Z-b8-zbc" secondAttribute="trailing" constant="40" id="S62-rF-01D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r2H-fe-ZPl" secondAttribute="trailing" id="p9L-1x-UbV"/>
+                            <constraint firstItem="e9Z-b8-zbc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="sUU-5T-wAV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Weather" id="AAU-0L-SM1">
+                    <navigationItem key="navigationItem" title="Weather" id="AAU-0L-SM1">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="1L3-LV-1n0">
                             <connections>
                                 <segue destination="in4-ho-Kks" kind="show" identifier="citySegue" id="3kd-Pa-7Pq"/>
@@ -133,16 +131,16 @@
                     <connections>
                         <outlet property="cityName" destination="H63-bC-AyS" id="ec3-vQ-tPv"/>
                         <outlet property="currentTemperature" destination="QA9-mu-XEQ" id="Zqj-ss-Czj"/>
-                        <outlet property="maximumTemperature" destination="M8a-L2-R7r" id="2b8-2P-Xxf"/>
-                        <outlet property="minimumTemperature" destination="hOM-VN-HkY" id="oeh-jI-NGS"/>
+                        <outlet property="humidity" destination="hOM-VN-HkY" id="LsL-98-R8w"/>
                         <outlet property="weatherDescription" destination="ruS-GH-FIN" id="fcK-iD-617"/>
+                        <outlet property="weatherImage" destination="Ffp-jK-GaS" id="e52-Td-mKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="111.99400299850076"/>
         </scene>
-        <!--Cities-->
+        <!--Select City-->
         <scene sceneID="sml-2O-sDu">
             <objects>
                 <tableViewController storyboardIdentifier="CityView" id="in4-ho-Kks" customClass="City" customModule="BoseWeatherApplication" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,7 +172,7 @@
                             <outlet property="delegate" destination="in4-ho-Kks" id="msd-io-IUy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cities" id="ELq-Ao-0wS"/>
+                    <navigationItem key="navigationItem" title="Select City" id="ELq-Ao-0wS"/>
                     <connections>
                         <outlet property="searchBar" destination="6J4-rw-VHg" id="Kbk-sx-Opv"/>
                     </connections>
@@ -204,7 +202,7 @@
         <!--Forecast-->
         <scene sceneID="7hl-CJ-DNU">
             <objects>
-                <tableViewController id="L67-hq-hjg" sceneMemberID="viewController">
+                <tableViewController id="L67-hq-hjg" customClass="Forecast" customModule="BoseWeatherApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ySU-zZ-FAv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
