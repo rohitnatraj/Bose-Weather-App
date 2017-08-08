@@ -73,7 +73,6 @@ class CityModel:NSObject {
                 
             }
         }, onFailure: {(error) in
-
                 self.delegate?.cityDataReceivedWithError(error)
         })
     }

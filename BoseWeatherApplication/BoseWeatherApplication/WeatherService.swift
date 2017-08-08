@@ -12,7 +12,7 @@ class WeatherService:NSObject {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let openWeatherMapBaseURL = "https://api.apixu.com/v1/forecast.json?key=a7c8ab17bdfc49a5955232316170608&q="
-        let weatherRequestURL = URL(string: "\(openWeatherMapBaseURL)\(latitude),\(longitude)")
+        let weatherRequestURL = URL(string: "\(openWeatherMapBaseURL)\(latitude),\(longitude)&days=7")
         let queue = DispatchQueue(label: "Background")
         queue.async {
             if let weatherURL = weatherRequestURL {

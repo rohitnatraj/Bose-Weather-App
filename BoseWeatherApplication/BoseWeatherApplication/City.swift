@@ -20,8 +20,13 @@ class City: UITableViewController, UISearchBarDelegate, CityDelegate {
     let model = CityModel()
     var cityCoordinates = [CityCoordinates]()
     var cityCoordinate = CityCoordinates()
+    
     lazy var activityIndicator : UIActivityIndicatorView = {
        return UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    }()
+    
+    lazy var alertController : UIAlertController = {
+        return UIAlertController()
     }()
     
     //Outlets
@@ -120,11 +125,10 @@ class City: UITableViewController, UISearchBarDelegate, CityDelegate {
     
     func cityDataReceivedWithError(_ error: Error?) {
         self.manageActivityIndicator(false)
-        let alert = UIAlertController()
-        alert.title = "Error"
-        alert.message = error?.localizedDescription
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.alertController.title = "Error"
+        self.alertController.message = error?.localizedDescription
+        self.alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(self.alertController, animated: true, completion: nil)
     }
     
 }
