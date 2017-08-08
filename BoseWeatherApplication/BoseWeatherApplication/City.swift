@@ -25,9 +25,7 @@ class City: UITableViewController, UISearchBarDelegate, CityDelegate {
        return UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     }()
     
-    lazy var alertController : UIAlertController = {
-        return UIAlertController()
-    }()
+    private lazy var alertController = UIAlertController()
     
     //Outlets
     @IBOutlet weak var searchBar: UISearchBar!

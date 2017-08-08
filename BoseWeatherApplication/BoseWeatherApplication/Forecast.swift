@@ -12,9 +12,7 @@ class Forecast: UITableViewController {
     
     //Instance Variables
     var forecast:[WeatherForecast]? = nil
-    lazy var dateFormatter:DateFormatter = {
-        return DateFormatter()
-    }()
+    private lazy var dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,10 +13,42 @@ protocol CityDelegate: class {
     func cityDataReceivedWithError(_ error:Error?)
 }
 
-class CityCoordinates:NSObject {
+class CityCoordinates:NSObject, NSCoding {
+
     var longitude:Double? = nil
     var lattitude:Double? = nil
     var cityName:String? = nil
+    
+    override init() {}
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        //if let longitude = aDecoder.decodeObject(forKey: "longitude") as? Double {
+            self.longitude = aDecoder.decodeObject(forKey: "longitude") as? Double
+        //}
+        
+        //if let lattitude = aDecoder.decodeObject(forKey: "lattitude") as? Double {
+            self.lattitude = aDecoder.decodeObject(forKey: "lattitude") as? Double
+        //}
+        
+        //if let cityName = aDecoder.decodeObject(forKey: "cityName") as? String {
+            self.cityName = aDecoder.decodeObject(forKey: "cityName") as? String
+        //}
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        if let longitude = self.longitude {
+            aCoder.encode(longitude, forKey: "longitude")
+        }
+        
+        if let lattitude = self.lattitude {
+            aCoder.encode(lattitude, forKey: "lattitude")
+        }
+        
+        if let cityName = self.cityName {
+            aCoder.encode(cityName, forKey: "cityName")
+        }
+    }
 }
 
 class CityModel:NSObject {

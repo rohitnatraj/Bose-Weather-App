@@ -28,9 +28,7 @@ class ViewController: UIViewController, CitySelectionDelegate, CurrentWeatherDel
         return UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     }()
     
-    lazy var alertController : UIAlertController = {
-        return UIAlertController()
-    }()
+    private lazy var alertController = UIAlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +51,9 @@ class ViewController: UIViewController, CitySelectionDelegate, CurrentWeatherDel
     
     func userSelected(_ city: CityCoordinates) {
         self.manageActivityIndicator(true)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(NSKeyedArchiver.archivedData(withRootObject: city), forKey: "City")
+        userDefaults.synchronize()
         self.currentWeatherModel.getCurrentWeatherFor(city)
     }
     
@@ -142,8 +143,15 @@ class ViewController: UIViewController, CitySelectionDelegate, CurrentWeatherDel
             cityCoordinates.longitude = locale.longitude
             cityCoordinates.lattitude = locale.latitude
             
-            self.currentWeatherModel.getCurrentWeatherFor(cityCoordinates)
-            
+            if let city = UserDefaults.standard.value(forKey: "City") as? Data {
+                let unarc = NSKeyedUnarchiver(forReadingWith: city)
+                if let newBlog = unarc.decodeObject(forKey: "root") as? CityCoordinates {
+                    self.currentWeatherModel.getCurrentWeatherFor(newBlog)
+                }
+            } else {
+                self.currentWeatherModel.getCurrentWeatherFor(cityCoordinates)
+            }
+        
         }
     }
     
