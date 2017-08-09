@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import UserNotifications
+
+let kOneHour:TimeInterval = 3600
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.setMinimumBackgroundFetchInterval(kOneHour)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { (success, error) in
+                //
+        }
         // Override point for customization after application launch.
         return true
     }
@@ -40,6 +46,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+        
+        func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+                if let viewController = self.window?.rootViewController?.childViewControllers[0] as? ViewController {
+                        viewController.fetchNewDataWithCompletionHandler({ (backgroundFetchResults) in
+                                let content = UNMutableNotificationContent()
+                                content.title = "Update"
+                                content.body = "Weather data has been updated. Please check out the app for more updates"
+                                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600,
+                                                                                repeats: false)
+                                
+                                let identifier = "UYLLocalNotification"
+                                let request = UNNotificationRequest(identifier: identifier,
+                                                                    content: content, trigger: trigger)
+                                UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                                        if let error = error {
+                                                print("There was some \(error)")
+                                        }
+                                })
+                                completionHandler(.newData)
+                                
+                        })
+                }
+        }
 
 
 }

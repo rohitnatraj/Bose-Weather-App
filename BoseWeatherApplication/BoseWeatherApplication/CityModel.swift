@@ -20,20 +20,16 @@ class CityCoordinates:NSObject, NSCoding {
     var cityName:String? = nil
     
     override init() {}
+
+        func isEmpty() -> Bool {
+                return (self.longitude == nil && self.lattitude == nil && self.cityName == nil)
+        }
     
     required init?(coder aDecoder: NSCoder) {
         
-        //if let longitude = aDecoder.decodeObject(forKey: "longitude") as? Double {
-            self.longitude = aDecoder.decodeObject(forKey: "longitude") as? Double
-        //}
-        
-        //if let lattitude = aDecoder.decodeObject(forKey: "lattitude") as? Double {
-            self.lattitude = aDecoder.decodeObject(forKey: "lattitude") as? Double
-        //}
-        
-        //if let cityName = aDecoder.decodeObject(forKey: "cityName") as? String {
-            self.cityName = aDecoder.decodeObject(forKey: "cityName") as? String
-        //}
+                self.longitude = aDecoder.decodeDouble(forKey:"longitude")
+                self.lattitude = aDecoder.decodeDouble(forKey: "lattitude")
+                self.cityName = aDecoder.decodeObject(forKey: "cityName") as? String
     }
     
     func encode(with aCoder: NSCoder) {

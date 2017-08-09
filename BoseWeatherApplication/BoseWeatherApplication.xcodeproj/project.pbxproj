@@ -191,6 +191,11 @@
 					6A67CF241F362D2F0001D1B2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					6A67CF381F362D2F0001D1B2 = {
 						CreatedOnToolsVersion = 8.2.1;
