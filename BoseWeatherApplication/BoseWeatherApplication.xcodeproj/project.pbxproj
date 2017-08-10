@@ -14,13 +14,19 @@
 		6A3AE0E71F36D6450053BE5D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AE0E51F36D6450053BE5D /* WeatherService.swift */; };
 		6A3AE0E91F36D8090053BE5D /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AE0E81F36D8090053BE5D /* CityService.swift */; };
 		6A3AE0EA1F36D8090053BE5D /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AE0E81F36D8090053BE5D /* CityService.swift */; };
+		6A4951B11F3CAE55007FB0CC /* CityModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4951B01F3CAE55007FB0CC /* CityModelTests.swift */; };
+		6A4951B31F3CAEBC007FB0CC /* CityService.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A4951B21F3CAEBC007FB0CC /* CityService.json */; };
+		6A4951B51F3CC909007FB0CC /* WeatherService.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A4951B41F3CC909007FB0CC /* WeatherService.json */; };
 		6A67CF291F362D2F0001D1B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */; };
 		6A67CF2B1F362D2F0001D1B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CF2A1F362D2F0001D1B2 /* ViewController.swift */; };
 		6A67CF2E1F362D2F0001D1B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A67CF2C1F362D2F0001D1B2 /* Main.storyboard */; };
 		6A67CF331F362D2F0001D1B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A67CF311F362D2F0001D1B2 /* LaunchScreen.storyboard */; };
-		6A67CF3E1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CF3D1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift */; };
 		6AF0E1661F36E17000226351 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF0E1651F36E17000226351 /* City.swift */; };
 		6AF0E1681F36E46000226351 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF0E1671F36E46000226351 /* CityModel.swift */; };
+		6AFE424E1F3BF56800F2AACE /* ForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE424D1F3BF56800F2AACE /* ForecastTests.swift */; };
+		6AFE42511F3C15A800F2AACE /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE42501F3C15A800F2AACE /* ViewControllerTests.swift */; };
+		6AFE42531F3C19AA00F2AACE /* CurrentWeatherModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE42521F3C19AA00F2AACE /* CurrentWeatherModelTests.swift */; };
+		6AFE42551F3C1D3700F2AACE /* CityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE42541F3C1D3700F2AACE /* CityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +45,9 @@
 		6A1ECF8B1F38209C006E142C /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		6A3AE0E51F36D6450053BE5D /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		6A3AE0E81F36D8090053BE5D /* CityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityService.swift; sourceTree = "<group>"; };
+		6A4951B01F3CAE55007FB0CC /* CityModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityModelTests.swift; path = ../BoseWeatherApplication/CityModelTests.swift; sourceTree = "<group>"; };
+		6A4951B21F3CAEBC007FB0CC /* CityService.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CityService.json; path = ../BoseWeatherApplication/CityService.json; sourceTree = "<group>"; };
+		6A4951B41F3CC909007FB0CC /* WeatherService.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WeatherService.json; path = ../BoseWeatherApplication/WeatherService.json; sourceTree = "<group>"; };
 		6A67CF251F362D2F0001D1B2 /* BoseWeatherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoseWeatherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A67CF2A1F362D2F0001D1B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,10 +55,13 @@
 		6A67CF321F362D2F0001D1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A67CF341F362D2F0001D1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A67CF391F362D2F0001D1B2 /* BoseWeatherApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoseWeatherApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A67CF3D1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoseWeatherApplicationTests.swift; sourceTree = "<group>"; };
 		6A67CF3F1F362D2F0001D1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AF0E1651F36E17000226351 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		6AF0E1671F36E46000226351 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		6AFE424D1F3BF56800F2AACE /* ForecastTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastTests.swift; path = ../BoseWeatherApplication/ForecastTests.swift; sourceTree = "<group>"; };
+		6AFE42501F3C15A800F2AACE /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTests.swift; path = ../BoseWeatherApplication/ViewControllerTests.swift; sourceTree = "<group>"; };
+		6AFE42521F3C19AA00F2AACE /* CurrentWeatherModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentWeatherModelTests.swift; path = ../BoseWeatherApplication/CurrentWeatherModelTests.swift; sourceTree = "<group>"; };
+		6AFE42541F3C1D3700F2AACE /* CityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityTests.swift; path = ../BoseWeatherApplication/CityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,14 +131,14 @@
 		6A67CF271F362D2F0001D1B2 /* BoseWeatherApplication */ = {
 			isa = PBXGroup;
 			children = (
+				6A67CF311F362D2F0001D1B2 /* LaunchScreen.storyboard */,
+				6A67CF2C1F362D2F0001D1B2 /* Main.storyboard */,
+				6A67CF341F362D2F0001D1B2 /* Info.plist */,
+				6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */,
+				6A1ECF881F380419006E142C /* Assets.xcassets */,
 				6A1ECF8A1F38207E006E142C /* Forecast */,
 				6A1ECF851F37B2DB006E142C /* Current Weather */,
 				6A3AE0EB1F36D9CD0053BE5D /* Search City */,
-				6A67CF281F362D2F0001D1B2 /* AppDelegate.swift */,
-				6A67CF2C1F362D2F0001D1B2 /* Main.storyboard */,
-				6A67CF311F362D2F0001D1B2 /* LaunchScreen.storyboard */,
-				6A67CF341F362D2F0001D1B2 /* Info.plist */,
-				6A1ECF881F380419006E142C /* Assets.xcassets */,
 			);
 			path = BoseWeatherApplication;
 			sourceTree = "<group>";
@@ -134,7 +146,13 @@
 		6A67CF3C1F362D2F0001D1B2 /* BoseWeatherApplicationTests */ = {
 			isa = PBXGroup;
 			children = (
-				6A67CF3D1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift */,
+				6AFE424D1F3BF56800F2AACE /* ForecastTests.swift */,
+				6A4951B41F3CC909007FB0CC /* WeatherService.json */,
+				6AFE42501F3C15A800F2AACE /* ViewControllerTests.swift */,
+				6AFE42521F3C19AA00F2AACE /* CurrentWeatherModelTests.swift */,
+				6A4951B21F3CAEBC007FB0CC /* CityService.json */,
+				6AFE42541F3C1D3700F2AACE /* CityTests.swift */,
+				6A4951B01F3CAE55007FB0CC /* CityModelTests.swift */,
 				6A67CF3F1F362D2F0001D1B2 /* Info.plist */,
 			);
 			path = BoseWeatherApplicationTests;
@@ -229,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A67CF331F362D2F0001D1B2 /* LaunchScreen.storyboard in Resources */,
+				6A4951B51F3CC909007FB0CC /* WeatherService.json in Resources */,
 				6A1ECF891F380419006E142C /* Assets.xcassets in Resources */,
+				6A4951B31F3CAEBC007FB0CC /* CityService.json in Resources */,
 				6A67CF2E1F362D2F0001D1B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AFE42511F3C15A800F2AACE /* ViewControllerTests.swift in Sources */,
+				6AFE42551F3C1D3700F2AACE /* CityTests.swift in Sources */,
+				6AFE424E1F3BF56800F2AACE /* ForecastTests.swift in Sources */,
 				6A3AE0E71F36D6450053BE5D /* WeatherService.swift in Sources */,
 				6A3AE0EA1F36D8090053BE5D /* CityService.swift in Sources */,
-				6A67CF3E1F362D2F0001D1B2 /* BoseWeatherApplicationTests.swift in Sources */,
+				6AFE42531F3C19AA00F2AACE /* CurrentWeatherModelTests.swift in Sources */,
+				6A4951B11F3CAE55007FB0CC /* CityModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BoseWeatherApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RohitNatraj.BoseWeatherApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BoseWeatherApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RohitNatraj.BoseWeatherApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";

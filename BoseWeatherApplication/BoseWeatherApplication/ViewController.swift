@@ -18,6 +18,7 @@ class ViewController: UIViewController, CitySelectionDelegate, CurrentWeatherDel
         @IBOutlet weak var humidity: UILabel!
         @IBOutlet weak var weatherImage: UIImageView!
         @IBOutlet weak var forecastButton: UIButton!
+        
         //Instance Variable
         let currentWeatherModel = CurrentWeatherModel()
         let city = City()
@@ -41,6 +42,10 @@ class ViewController: UIViewController, CitySelectionDelegate, CurrentWeatherDel
                         locationManager.delegate = self
                         locationManager.desiredAccuracy = kCLLocationAccuracyBest
                         locationManager.startUpdatingLocation()
+                }
+                
+                if let cityCoordinates = self.getCityCoordinatesFromUserDefaults() {
+                        self.currentWeatherModel.getCurrentWeatherFor(cityCoordinates)
                 }
         }
         
@@ -144,20 +149,25 @@ class ViewController: UIViewController, CitySelectionDelegate, CurrentWeatherDel
                         cityCoordinates.longitude = locale.longitude
                         cityCoordinates.lattitude = locale.latitude
                         
-                        if let city = UserDefaults.standard.value(forKey: "City") as? Data {
-                                let unarc = NSKeyedUnarchiver(forReadingWith: city)
-                                if let newBlog = unarc.decodeObject(forKey: "root") as? CityCoordinates {
-                                        self.cityCoordinate = newBlog
-                                }
-                        } else {
+                        if self.getCityCoordinatesFromUserDefaults() == nil {
                                 self.cityCoordinate = cityCoordinates
+                                self.currentWeatherModel.getCurrentWeatherFor(self.cityCoordinate)
                         }
-                        
-                        self.currentWeatherModel.getCurrentWeatherFor(self.cityCoordinate)
                         
                 }
         }
         
+        func getCityCoordinatesFromUserDefaults() -> CityCoordinates? {
+                if let city = UserDefaults.standard.value(forKey: "City") as? Data {
+                        let unarc = NSKeyedUnarchiver(forReadingWith: city)
+                        if let newBlog = unarc.decodeObject(forKey: "root") as? CityCoordinates {
+                                return newBlog
+                        }
+                }
+                return nil
+        }
+        
+        //Background Fetch completion
         func fetchNewDataWithCompletionHandler(_ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
                 self.currentWeatherModel.getCurrentWeatherFor(self.cityCoordinate)
                 completionHandler(UIBackgroundFetchResult.newData)

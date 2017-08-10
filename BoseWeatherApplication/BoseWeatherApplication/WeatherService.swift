@@ -32,7 +32,7 @@ class WeatherService:NSObject {
                             }
                         }
                         catch {
-                            
+                            print("Error")
                         }
                     }
                 }
